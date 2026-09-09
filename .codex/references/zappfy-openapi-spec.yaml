@@ -155,7 +155,7 @@ components:
         lastDisconnect: '2025-01-24T14:00:00Z'
         lastDisconnectReason: Network error
         adminField01: custom_data
-        openai_apikey: sk-...xyz
+        openai_apikey: OPENAI_API_KEY_EXAMPLE
         chatbot_enabled: true
         chatbot_ignoreGroups: true
         chatbot_stopConversation: parar
@@ -2024,7 +2024,7 @@ paths:
             schema:
               type: object
               example:
-                openai_apikey: sk-1234567890abcdefghijklmnopqrstuvwxyz
+                openai_apikey: OPENAI_API_KEY_EXAMPLE
                 chatbot_enabled: true
                 chatbot_ignoreGroups: true
                 chatbot_stopConversation: stop
@@ -5991,7 +5991,7 @@ paths:
                 openai_apikey:
                   type: string
                   description: Chave da API OpenAI para transcrição (opcional)
-                  example: sk-...
+                  example: OPENAI_API_KEY_EXAMPLE
                 download_quoted:
                   type: boolean
                   description: Se verdadeiro, baixa mídia da mensagem citada ao invés da mensagem principal
@@ -8454,7 +8454,7 @@ paths:
 
         - "openai" (ChatGPT)
 
-        - "anthropic" (Claude)
+        - "anthropic" (provedor externo)
 
         - "gemini" (Google)
 
@@ -8489,15 +8489,15 @@ paths:
         - gpt-3.5-turbo
 
 
-        ##### Claude
+        ##### Codex
 
-        Documentação: https://docs.anthropic.com/en/docs/about-claude/models
+        Documentação: https://developers.openai.com/codex
 
-        - claude-3-5-sonnet-latest
+        - gpt-5.3-codex
 
-        - claude-3-5-haiku-latest
+        - gpt-5.3-codex
 
-        - claude-3-opus-latest
+        - gpt-5.3-codex
 
 
         ##### Gemini
@@ -8644,8 +8644,8 @@ paths:
 
         {
           "name": "Suporte Técnico",
-          "provider": "anthropic",
-          "model": "claude-3-sonnet-20240229",
+          "provider": "openai",
+          "model": "gpt-5.3-codex",
           "basePrompt": "Você é um agente de suporte técnico...",
           "temperature": 30,
           "maxTokens": 3000,
@@ -8682,7 +8682,7 @@ paths:
                 agent:
                   name: uazabot
                   provider: openai
-                  apikey: sk-proj-HfXFgA
+                  apikey: OPENAI_API_KEY_EXAMPLE
                   basePrompt: Seu nome é Sara e você faz parte do time de suporte ao cliente da TechShop...
                   model: gpt-4o-mini
                   maxTokens: 2000
